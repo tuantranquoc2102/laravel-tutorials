@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ExportPdfController;
+use App\Http\Controllers\ExportPdfFromExcelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/export-pdf', [ExportPdfController::class, 'generatePDF']);
+Route::get('/export-pdf-from-excel', [ExportPdfFromExcelController::class, 'exportPdfFromExcel']);
